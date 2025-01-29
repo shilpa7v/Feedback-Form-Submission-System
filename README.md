@@ -23,6 +23,11 @@ INSTALLED_APPS = [
 8.python manage.py runserver
 9.Now go to http://127.0.0.1:8000/admin/ from your browser
 
+image
+
+![Image](https://github.com/user-attachments/assets/182d1b33-2cc3-40e8-9080-827f0fb51eb4)
+
+
 
 
 
