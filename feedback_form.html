@@ -1,0 +1,29 @@
+{% extends 'form/base.html' %}
+
+{% block title %}Feedback Form{% endblock %}
+
+{% block body %}
+<h2>We Value Your Feedback</h2>
+<p>Please take a moment to fill out this feedback form. Your opinion helps us improve.</p>
+
+<form action="{% url 'form:home' %}" method="POST">
+    {% csrf_token %}
+    <div>
+        {{ form.as_p }}
+    </div>
+    <button type="submit">Submit Feedback</button>
+</form>
+
+{% if form.errors %}
+    <div class="errors">
+        <p><strong>There were errors in your form submission:</strong></p>
+        <ul>
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+{% endblock %}
